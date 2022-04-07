@@ -1,0 +1,10 @@
+image: alpine:edge
+
+pages:
+  script:
+  - apk add git
+  - ./contrib/build-release
+  - cp -a ./site ./public
+  artifacts:
+    paths:
+    - public
