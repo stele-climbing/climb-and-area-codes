@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Climb and Area Codes</title>
+  <meta name="description" content="designing & picking practical identifiers for climbs">
+  <style>
+    .file-contents {
+      background-color: #eee;
+      border: solid black 1px;
+      padding: 2em;
+      overflow-x: scroll;
+    }
+    .codes-table {
+      border-collapse: collapse;
+      margin: auto;
+    }
+    .codes-table,
+    .codes-table th,
+    .codes-table td {
+      border: solid black 1px;
+      border-collapse: collapse;
+      padding: 0.5em;
+    }
+    .codes-table__code {
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+<main style="max-width:600px;margin:auto;">
+  <h1>Consensus Climb &amp; Area (CoCA) Codes</h1>
+  <p>
+    Our community already takes ad-hoc attempts at climb IDs;
+    <br>
+    they're single-purpose and scattered.
+  </p>
+  <p>
+    Climbing is growing quickly,
+    our community is spreading,
+    and guides are fragmenting.
+    A reliable climb identification strategy would let the community
+    benefit from multiple guides and platforms. 
+  </p>
+
+  <aside>
+    App/service-based guides guides create silos.
+    Our community doesn't benefit from the fragmentation.
+  </aside>
+
+  <p>
+    The goal is to design a scheme that is accurate enough to be helpful,
+    but not so precise that it's a burden.
+  </p>
+
+  <hr>
+
+  <section id="simply">
+  <h2>Simply</h2>
+  <p>
+    CoCA Codes have a few goals (listed in decreasing importance):
+  </p>
+  <ol>
+    <li>Offer concise, transparent identification for climbs and destination
+    <li>Be easily adoptable
+        (straightforward, low code, transparent)
+    <li>Be useful in multiple contexts
+        (computer and word-of-mouth)
+        (guidebooks and guide platforms)
+    <li>Allow the community to come to a consensus
+  </ol>
+  <p>
+    <strong>Destination Codes</strong> must be unique within ~200 miles (300 kilometers).
+    This is sufficiently accurate for casual communication.
+    A 3-character geohash is a sufficient prefix to distinguish these climbs.
+  </p>
+  <p>
+    <strong>Climb Codes</strong> should be unique within either 3 miles (5km)
+    <em>or</em> the destination that the climb is in, whichever contains more climbs.
+    This specificity is sufficiently precise for casual communication or use within a guidebook.
+    Also, when prefixed with a 6-character geohash, it will make for a code that is unique within the world.
+    Optionally, for better human friendliness, instead of the 6-character geohash prefix,
+    the destination's code can be used.
+  </p>
+<!--
+  <aside>
+    For context,
+    300km covers most of Southern California, 
+    300km covers the Swiss Alps, 
+    300km covers Boulder, Colorado Springs, and Gunnison.
+    Prefixing the destination
+  </aside>
+-->
+
+  <h3>Destination Examples</h3>
+  <table class="codes-table">
+    <thead>
+      <tr>
+        <th>Geohash</th>
+        <th>Code</th>
+        <th>Destination</th>
+        <th>Plain Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://geohash.softeng.co/9qd">9qd</a></td>
+        <td>YOV</td>
+        <td>Yosemite Valley</td>
+        <td class="codes-table__code">9qd:YOV</td>
+      </tr>
+      <tr>
+        <td><a href="https://geohash.softeng.co/9qe">9qe</a></td>
+        <td>TUO</td>
+        <td>Tuolumne Meadows</td>
+        <td class="codes-table__code">9qe:TUO</td>
+      </tr>
+      <tr>
+        <td><a href="https://geohash.softeng.co/9qm">9qm</a></td>
+        <td>RED</td>
+        <td>Red Rocks</td>
+        <td class="codes-table__code">9qm:RED</td>
+      </tr>
+      <tr>
+        <td><a href="https://geohash.softeng.co/u09">u09</a></td>
+        <td>FONT</td>
+        <td>Fontainbleau</td>
+        <td class="codes-table__code">u09:FONT</td>
+      </tr>
+      <tr>
+        <td><a href="https://geohash.softeng.co/dr7">dr7</a></td>
+        <td>GNX</td>
+        <td>The Gunks</td>
+        <td class="codes-table__code">dr7:GNX</td>
+      </tr>
+      <tr>
+        <td><a href="https://geohash.softeng.co/dny">dny</a></td>
+        <td>NRG</td>
+        <td>The New River Gorge</td>
+        <td class="codes-table__code">dny:NRG</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Climb Examples</h3>
+  <table class="codes-table">
+    <thead>
+      <tr>
+        <th colspan=2>Prefix</th>
+        <th>Code</th>
+        <th>Climb</th>
+        <th>Plain Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan=2><a href="https://geohash.softeng.co/9qmvtw">9qmvtw</a></td>
+        <td rowspan=2>PLC</td>
+        <td rowspan=2>Plumber's Crack</td>
+        <td class="codes-table__code">9qmvtw:PLC</td>
+      </tr>
+      <tr>
+        <td><a href="https://geohash.softeng.co/9qm">9qm</a></td>
+        <td>RED</td>
+        <td class="codes-table__code">9qm:RED:PLC</td>
+      </tr>
+
+      <tr>
+        <td colspan=2><a href="https://geohash.softeng.co/9qdywq">9qdywq</a></td>
+        <td rowspan=2>MNL</td>
+        <td rowspan=2>Midnight Lightning</td>
+        <td class="codes-table__code">9qdywq:MNL</td>
+      </tr>
+      <tr>
+        <td><a href="https://geohash.softeng.co/9qd">9qd</a></td>
+        <td>YOV</td>
+        <td class="codes-table__code">9qd:YOV:MNL</td>
+      </tr>
+
+      <tr>
+        <td colspan=2><a href="https://geohash.softeng.co/9qdyts">9qdyts</a></td>
+        <td rowspan=2>NOS</td>
+        <td rowspan=2>The Nose</td>
+        <td class="codes-table__code">9qdyts:NOS</td>
+      </tr>
+      <tr>
+        <td><a href="https://geohash.softeng.co/9qd">9qd</a></td>
+        <td>YOV</td>
+        <td class="codes-table__code">9qd:YOV:NOS</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <!-- TODO: make these links, or link to ./examples/ -->
+
+  <h2>How to pick codes</h2>
+  you have a climb (or destination) and you want a code for it:
+
+  <ol>
+    <li>check a CoCA explorer (and guidebooks) to see if a code already exists
+    <li>pick a code
+        <!-- abstract ids or non-literal names prevent renaming issues -->
+    <li>upload to services or contact guidebook authors
+  </ol>
+  <!-- TODO: make this a simple flow chart -->
+
+  <h2>Coming to a consensus</h2>
+
+  <p>The community coming to a consensus when codes differ is necessary.</p>
+
+  <h3>How to publish codes</h3>
+
+<p>TSV documents.</p>
+<p>sharing the data should be simple</p>
+
+<ul>
+  <li><strong>geohash</strong>
+  <li><strong>coca code</strong>
+  <li><strong>climb name</strong>
+  <li><strong>url</strong>
+</ul>
+
+<pre class="file-contents">
+9qdytse	NOS	The Nose	https://www.thecrag.com/20685193
+</pre>
+<!-- Optional URL: https://www.thecrag.com/20685193 -->
+
+<ul>
+  <li><strong>geohash</strong> <!-- TODO: suggest specificity -->
+  <li><strong>coca code</strong>
+  <li><strong>destination name</strong>
+  <li><strong>url</strong>
+</ul>
+
+<pre class="file-contents">
+9qdy	YOV	Yosemite Valley	https://www.thecrag.com/14343655
+</pre>
+
+<!--
+    If you're implementing CoCA Codes,
+    link to a viewer (to be written)
+    <a href="//steleclimbing.gitlab.io/climb-and-area-code-viewer">here</a> or
+-->
+
+  </section>
+
+
+  <h2>Questions & Issues</h2>
+  <ul>
+    <li>With using only the delimiter &quot;:&quot;, it's not programatically obvious
+        whether a code represents a climb or destination.
+    <li>How should destinations on geohash boundaries be handled?
+      (see the New River Gorge at 
+        <a href="https://geohash.softeng.co/dnw">dnw</a> and
+        <a href="https://geohash.softeng.co/dny">dny</a>) 
+      <!-- TODO: verify that this is correct -->
+    <li>
+      What is an destination?
+      <br>(e.g., Yosemite National Park, Yosemite Valley, Upper Yosemite Valley, El Capitain)
+      <br> Does it really matter? What are the consequences?
+    </li>
+    <li>Can I use 4 letters for an destination? 5 letters?
+    <li>Pick letters to reflect spelling or phoenetics? GUNKS vs GUNK vs GNK vs GNX?
+      <!-- TODO: a test to check if there's enough space in a populated destination -->
+    <li>Precision and keyspace <!-- is this the correct word -->
+      <ul>
+        <li>Is 3 digits precise enough for an destination?
+        <li>Is 3 characters enough keyspace for an destination?
+            jtree has &gt;20,000 routes 
+            (see <a href="">this</a> citing
+                 <a href="https://www.youtube.com/watch?v=HQUwdfuEkKk">this</a>)
+<code>Math.pow('abcdefghijklmnopqrstuvwxyz0123456789'.length, 4) == 1679616</code>
+<code>Math.pow('abcdefghijklmnopqrstuvwxyz0123456789'.length, 3) == 46656</code>
+        <li>Is 6 digits precise enough?
+        <li>Are there enough options in three letters?
+      </ul>
+    </li>
+    <li>
+      <strong>is there a canonical form?</strong>
+      (<code>{geohash}.{climb code}</code> vs
+       <code>{geohash}.{destination codes}.{climb code}</code>)
+      again, what are the consequences of this being unspecificed?
+    </li>
+    <li>the separator between codes
+      (using ":" for now)
+      (perhaps it should be
+       <a href="https://stackoverflow.com/questions/695438/what-are-the-safe-characters-for-making-urls">url friendly</a>
+       since this is intended for apps)
+    </li>
+    <li>is there an upper limit on characters?
+    <li>is there a  lower limit on characters?
+      (see <a href="https://www.mountainproject.com/route/106004766/go">Go!</a>
+       and <a href="https://www.mountainproject.com/route/113230570/go">Go</a>)
+    <li>Is Unicode okay?
+      (see <a href="https://www.mountainproject.com/route/105835105/manana">Mañana</a>)
+  </ul>
+
+  <footer style="font-size:0.8em;">
+    <p>
+      There aren't <em>that</em> many three-character geohashes that fall on land.
+      It could be reasonable to define some prefixes and avoid the geohash dependency entirely.
+    </p>
+    <p>
+      For example, if the North American West Coast had the code <code>NAW</code>,
+      Could we get away with <code>NAW.YOV.NOSE</code> for The Nose?
+    </p>
+    <hr>
+    <a href="https://xkcd.com/927/">obligiatory xkcd</a>
+    <a href="https://vimeo.com/108415168">not satisified?</a>
+  </footer>
+
+</main>
+</body>
+</html>
+

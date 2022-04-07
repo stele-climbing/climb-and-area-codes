@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Climb and area code examples</title>
+  <meta name="description" content="experiment with climb and area codes">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+</head>
+
+<body>
+
+<style>
+  main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+  }
+
+  #example-map {
+    width: 60%;
+    height: 100vh;
+  }
+
+  #example-text {
+    width: 40%;
+    height: 100vh;
+    padding: 1em;
+    overflow-y: scroll;
+  }
+</style>
+
+<main>
+
+  <div id="example-map"></div>
+
+  <section id="example-text">
+    <h1>[WIP] Climb &amp; Area Code Examples</h1>
+    <p><strong>TODO:</strong>
+    </p>
+     
+    <ul>
+      <li>Use different markers for geohashes, climbs, and areas.</li>
+      <li>add better/comprehensive examples that...
+        <ul>
+          <li>highlight potential conflicts</li>
+          <li>better show density of areas</li>
+        </ul>
+      </li>
+    </ul>
+    
+  <section>
+
+</main>
+
+<script>
+  var map = L.map('example-map').setView({
+    "lat": 37.70555348721583,
+    "lng": -119.53399658203126
+  }, 6);
+  
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  
+  //let dataName  = L.marker([39.5156488952104, -77.4665842038481]).bindPopup('dataName').addTo(map);
+  //let dataValue = L.marker([39.5079838377581, -77.469446842184]).bindPopup('dataValue').addTo(map);
+  //let coords    = L.marker([39.5079838377581, -77.469446842184]).bindPopup('coords').addTo(map);
+  //let common    = L.marker([39.5,             -77.46]).bindPopup('common').addTo(map);
+  
+  let yosemite = [37.7348, -119.6067];
+  let tuolumne = [37.8472, -119.4359]
+  let redRocks = [36.15, -115.46];
+  
+  let theNose = [37.728263, -119.636429];
+  let plumbersCrack = [36.159901156092936, -115.41711407792825];
+  let highExposure = [41.74125492959943, -74.18214106803914]; // approximate
+  
+  function climbMarker(pt, n){
+    var marker = L.marker(pt).bindPopup(n);
+    var circle = L.circle(pt, {
+      color: 'orange',
+      fill: false,
+      dashArray: '5 8',
+      radius: 5 * 1000
+    }).bindPopup('the code for ' + n + ' should be unique within 5km');
+    marker.addTo(map);
+    circle.addTo(map);
+  }
+  
+  function areaMarker(pt, n){
+    var marker = L.marker(pt).bindPopup('center of ' + n);
+    var circle = L.circle(pt, {
+      color: 'blue',
+      fill: false,
+      dashArray: '5 8',
+      radius: 300 * 1000
+    }).bindPopup('the code for ' + n + ' should be unique within 300km');
+    marker.addTo(map);
+    circle.addTo(map);
+  }
+  
+  climbMarker(theNose, 'The Nose');
+  
+  areaMarker(yosemite, 'Yosemite Valley');
+  areaMarker(tuolumne, 'Tuolumne Meadows');
+  // areaMarker(redRocks, 'Red Rocks');
+  
+  let a = function(h){
+    let el = document.createElement('a');
+    el.setAttribute('href', 'http://geohash.org/' + h);
+    el.innerHTML = 'geohash ' + h;
+    return el.outerHTML;
+  }
+  // see http://geohash.org/9qd
+  let geohashes = {
+    '9qd': [37, -120],
+    '9qe': [37, -119],
+    '9qf': [39, -120],
+    '9qg': [39, -119],
+    '9qdyts': [37.73, -119.6],
+    '9qdywq': [37.74, -119.6],
+    // '9qmvtw': [36.16, -115.4],
+  };
+  
+  let geohashMarkers = {};
+  
+  for (let key in geohashes) {
+    geohashMarkers[key] = L.marker(geohashes[key]).bindPopup(a(key));
+    geohashMarkers[key].addTo(map);
+  }
+  
+  map.on('click', e => console.log(e));
+
+</script>
+
+</body>
+</html>
+
