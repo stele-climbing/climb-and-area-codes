@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Climb and area code examples</title>
-  <meta name="description" content="experiment with climb and area codes">
+  <title>Climb and Area Code Examples</title>
+  <meta name="description" content="visualize (and experiment) with climb and area codes">
   <link rel="stylesheet" href="../main.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -35,7 +35,7 @@
     text-align: center;
   }
 
-  .area-icon {
+  .destination-centroid-icon {
     border: solid 1px black;
     background-color: blue;
     border-radius: 50%;
@@ -88,13 +88,83 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  let yosemite = [37.7348, -119.6067];
-  let tuolumne = [37.8472, -119.4359]
-  let redRocks = [36.15, -115.46];
+  let yosemite = [
+    [37.70881291183666, -119.56661224365234],
+    [37.71071417666637, -119.52301025390624],
+    [37.71614609310728, -119.44438934326172],
+    [37.75660133485110, -119.44267272949219],
+    [37.75877280300828, -119.47528839111328],
+    [37.80761398306056, -119.46395874023439],
+    [37.81795494780686, -119.48284149169920],
+    [37.78075532805877, -119.53193664550781],
+    [37.77071473849609, -119.58103179931642],
+    [37.75388691002291, -119.62841033935548],
+    [37.74112777938222, -119.67441558837892],
+    [37.74791482485267, -119.73999023437499],
+    [37.70338045783237, -119.75887298583984],
+    [37.68164666029180, -119.70771789550781],
+    [37.70039243840793, -119.69535827636717],
+    [37.69305769827658, -119.65038299560547],
+    [37.70881291183666, -119.56661224365234]
+  ];
 
-  let happyBoulders = [37.41712615728517, -118.45059837595089];
-  let sadBoulders = [37.420062594663506, -118.43410533158263];
-  let buttermilks = [37.32881243152914, -118.57601442025562];
+  let tuolumne = [
+    [37.825514327991890, -119.51133728027345],
+    [37.815751041563544, -119.42344665527344],
+    [37.827683771813590, -119.33555603027342],
+    [37.895446746399690, -119.34036254882814],
+    [37.947987871566440, -119.36920166015624],
+    [37.932283633898800, -119.45297241210938],
+    [37.870517217019390, -119.51271057128906],
+    [37.835818618104156, -119.54498291015625],
+    [37.825514327991890, -119.51133728027345]
+  ];
+
+  let redRocks = [
+    [35.99078538980489, -115.53977966308594],
+    [35.93076071531288, -115.49720764160156],
+    [35.94076799566985, -115.41137695312500],
+    [36.03743969755846, -115.43678283691405],
+    [36.13205188416276, -115.42442321777342],
+    [36.13829061860542, -115.40390968322752],
+    [36.16289412272415, -115.40296554565430],
+    [36.18361052181247, -115.41240692138670],
+    [36.19358569634506, -115.47351837158203],
+    [36.18444183488300, -115.51883697509766],
+    [36.11319402781914, -115.53462982177734],
+    [35.99078538980489, -115.53977966308594]
+  ];
+
+
+  let happyBoulders = [
+    [37.41949254606695, -118.46089839935301],
+    [37.41710664856186, -118.46059799194336],
+    [37.41775425682906, -118.45390319824219],
+    [37.41420938511824, -118.44892501831053],
+    [37.41540238952108, -118.44562053680420],
+    [37.42044688378566, -118.45355987548827],
+    [37.41949254606695, -118.46089839935301]
+  ];
+
+  let sadBoulders = [
+    [37.41884495283141, -118.43637228012086],
+    [37.41763496099009, -118.43409776687622],
+    [37.41829960681582, -118.43268156051636],
+    [37.42019125880355, -118.43195199966430],
+    [37.42639417869539, -118.43175888061523],
+    [37.42562736204009, -118.43332529067993],
+    [37.41884495283141, -118.43637228012086]
+  ];
+
+  let buttermilks = [
+    [37.33112960486265, -118.58136177062990],
+    [37.32766595082832, -118.58037471771240],
+    [37.32631798319032, -118.57595443725585],
+    [37.32758063713766, -118.57168436050414],
+    [37.33213625268720, -118.57342243194579],
+    [37.33445660984979, -118.57779979705810],
+    [37.33112960486265, -118.58136177062990]
+  ];
 
   let theNose = [37.728263, -119.636429];
   let midnightLightning = [37.74175049841879, -119.60350876180672];
@@ -133,30 +203,33 @@
     circle.addTo(map);
   }
 
-  function areaMarker(pt, n){
+  function centroid(pts){
+    let p0 = pts.map(p => p[0]).reduce((a, b) => a + b, 0);
+    let p1 = pts.map(p => p[1]).reduce((a, b) => a + b, 0);
+    return [p0 / pts.length, p1 / pts.length];
+  }
+
+  function destinationPerimeter(pts, n){
+    let center = centroid(pts);
     let i = L.divIcon({
       iconSize: [18, 18],
-      className: 'area-icon',
+      className: 'destination-centroid-icon',
     });
-    let marker = L.marker(pt, {
+    let dot = L.marker(center, {
       icon: i
-    }).bindPopup('center for ' + n);
-    var circle = L.circle(pt, {
+    }).bindPopup('centroid of ' + n);
+    let poly = L.polygon(pts, {
+      color: 'blue',
+    }).bindPopup('perimeter of ' + n);
+    var circle = L.circle(center, {
       color: 'blue',
       fill: false,
       dashArray: '5 8',
       radius: 300 * 1000
     }).bindPopup('the code for ' + n + ' should be unique within 300km');
-    marker.addTo(map);
+    poly.addTo(map);
+    dot.addTo(map);
     circle.addTo(map);
-  }
-
-
-  document.getElementById('focus-yosemite').onclick = function focusYosemite(){
-    map.flyTo({
-      lat: 37.742756727055514,
-      lng: -119.60367878381095
-    }, 12)
   }
 
   let geohashes = {
@@ -180,14 +253,20 @@
   climbMarker(midnightLightning, 'Midnight Lightning');
   climbMarker(snakeDike, 'Snake Dike');
 
-  areaMarker(yosemite, 'Yosemite Valley');
-  areaMarker(tuolumne, 'Tuolumne Meadows');
-  areaMarker(happyBoulders, 'Happy Boulders');
-  areaMarker(sadBoulders, 'Sad Boulders');
-  areaMarker(buttermilks, 'Buttermilks');
-  areaMarker(redRocks, 'Red Rocks');
+  destinationPerimeter(happyBoulders, 'Happy Boulders');
+  destinationPerimeter(sadBoulders, 'Sad Boulders');
+  destinationPerimeter(buttermilks, 'Buttermilks');
 
-  map.on('click', e => console.log(e))
+  destinationPerimeter(tuolumne, 'Tuolumne Meadows');
+  destinationPerimeter(yosemite, 'Yosemite Valley');
+  destinationPerimeter(redRocks, 'Red Rocks');
+
+  document.getElementById('focus-yosemite').onclick = function focusYosemite(){
+    map.flyTo({
+      lat: 37.742756727055514,
+      lng: -119.60367878381095
+    }, 12)
+  };
 
 </script>
 
