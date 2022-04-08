@@ -1,0 +1,38 @@
+html,
+.sans {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+.serif {
+  font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+pre, code,
+.mono {
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
+aside.todo::before {
+  display: inline;
+  content: 'TODO: ';
+  color: orange;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.file-contents {
+  background-color: #eee;
+  border: solid black 1px;
+  padding: 2em;
+  overflow-x: scroll;
+}
+
+.col-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-2 > * {
+  display: block;
+  width: 45%;
+  justify-content: space-between;
+}

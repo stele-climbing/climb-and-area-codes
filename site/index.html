@@ -6,16 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Climb and Area Codes</title>
   <meta name="description" content="designing & picking practical identifiers for climbs">
+  <link rel="stylesheet" href="main.css">
   <style>
-    .file-contents {
-      background-color: #eee;
-      border: solid black 1px;
-      padding: 2em;
-      overflow-x: scroll;
-    }
     .codes-table {
       border-collapse: collapse;
-      margin: auto;
     }
     .codes-table,
     .codes-table th,
@@ -32,36 +26,37 @@
 
 <body>
 <main style="max-width:600px;margin:auto;">
-  <h1>Consensus Climb &amp; Area (CoCA) Codes</h1>
-  <p>
-    Our community already takes ad-hoc attempts at climb IDs;
-    <br>
-    they're single-purpose and scattered.
-  </p>
-  <p>
-    Climbing is growing quickly,
-    our community is spreading,
-    and guides are fragmenting.
-    A reliable climb identification strategy would let the community
-    benefit from multiple guides and platforms. 
-  </p>
+  <h1>Consensus Climb &amp; Area Codes</h1>
+  <div class="col-2">
+    <p>
+      Our community already takes ad-hoc attempts at climb ids;
+      they're single-purpose and scattered.
+    </p>
 
-  <aside>
-    App/service-based guides guides create silos.
-    Our community doesn't benefit from the fragmentation.
-  </aside>
+    <p>
+      Climbing is growing quickly and guides are fragmenting.
+      A climb id strategy would let the community
+      benefit from multiple guides and platforms.
+    </p>
 
-  <p>
-    The goal is to design a scheme that is accurate enough to be helpful,
-    but not so precise that it's a burden.
-  </p>
+    <p>
+      The goal is to design a scheme that is accurate enough to be helpful,
+      but not so precise that it's a burden.
+    </p>
+
+    <p>
+      For brevity, this refers to
+      <strong>Co</strong>nsensus <strong>C</strong>limb and <strong>A</strong>rea Codes as
+      "coca" codes.
+      This name isn't final.
+    </p>
+  </div>
 
   <hr>
 
-  <section id="simply">
-  <h2>Simply</h2>
+  <h2>Summary</h2>
   <p>
-    CoCA Codes have a few goals (listed in decreasing importance):
+    Coca Codes have a few goals (listed in decreasing importance):
   </p>
   <ol>
     <li>Offer concise, transparent identification for climbs and destination
@@ -88,8 +83,8 @@
 <!--
   <aside>
     For context,
-    300km covers most of Southern California, 
-    300km covers the Swiss Alps, 
+    300km covers most of Southern California,
+    300km covers the Swiss Alps,
     300km covers Boulder, Colorado Springs, and Gunnison.
     Prefixing the destination
   </aside>
@@ -99,7 +94,7 @@
   <table class="codes-table">
     <thead>
       <tr>
-        <th>Geohash</th>
+        <th>Prefix</th>
         <th>Code</th>
         <th>Destination</th>
         <th>Plain Text</th>
@@ -195,68 +190,67 @@
     </tbody>
   </table>
 
+  <p>Also, see <a href="examples/">interactive examples</a></p>
+
   <!-- TODO: make these links, or link to ./examples/ -->
 
   <h2>How to pick codes</h2>
-  you have a climb (or destination) and you want a code for it:
+  Assuming you have a climb (or destination) and you want a code for it:
 
   <ol>
-    <li>check a CoCA explorer (and guidebooks) to see if a code already exists
+    <li>check a Coca explorer (and guidebooks) to see if a code already exists
     <li>pick a code
         <!-- abstract ids or non-literal names prevent renaming issues -->
     <li>upload to services or contact guidebook authors
   </ol>
   <!-- TODO: make this a simple flow chart -->
 
-  <h2>Coming to a consensus</h2>
+  <h2>Implementing Coca Codes</h2>
 
-  <p>The community coming to a consensus when codes differ is necessary.</p>
+  <aside class="todo">add hints and guidelines for services that want to support coca codes</aside>
 
   <h3>How to publish codes</h3>
 
-<p>TSV documents.</p>
-<p>sharing the data should be simple</p>
+  <p>
+    Simplicity is the goal.
+    A <a href="https://en.wikipedia.org/wiki/Tab-separated_values" title="text/tab-separated-values">TSV</a>
+    documents would be easy to create, share, and use.
+  </p>
 
-<ul>
-  <li><strong>geohash</strong>
-  <li><strong>coca code</strong>
-  <li><strong>climb name</strong>
-  <li><strong>url</strong>
-</ul>
-
-<pre class="file-contents">
-9qdytse	NOS	The Nose	https://www.thecrag.com/20685193
-</pre>
-<!-- Optional URL: https://www.thecrag.com/20685193 -->
-
-<ul>
-  <li><strong>geohash</strong> <!-- TODO: suggest specificity -->
-  <li><strong>coca code</strong>
-  <li><strong>destination name</strong>
-  <li><strong>url</strong>
-</ul>
-
-<pre class="file-contents">
-9qdy	YOV	Yosemite Valley	https://www.thecrag.com/14343655
-</pre>
-
-<!--
-    If you're implementing CoCA Codes,
-    link to a viewer (to be written)
-    <a href="//steleclimbing.gitlab.io/climb-and-area-code-viewer">here</a> or
--->
-
+  <section>
+    <ul>
+      <li><strong>geohash</strong>
+      <li><strong>coca code</strong>
+      <li><strong>climb name</strong>
+      <li><strong>url</strong>
+    </ul>
+<pre class="file-contents">9qdytse	NOS	The Nose	https://www.thecrag.com/20685193</pre>
   </section>
 
+  <section>
+    <ul>
+      <li><strong>geohash</strong> <!-- TODO: suggest specificity -->
+      <li><strong>coca code</strong>
+      <li><strong>destination name</strong>
+      <li><strong>url</strong>
+    </ul>
+<pre class="file-contents">9qdy	YOV	Yosemite Valley	https://www.thecrag.com/14343655</pre>
+  </section>
+
+  <!--
+    If you're implementing Coca Codes,
+    link to a viewer (to be written)
+    <a href="//steleclimbing.gitlab.io/climb-and-area-code-viewer">here</a> or
+  -->
 
   <h2>Questions & Issues</h2>
   <ul>
     <li>With using only the delimiter &quot;:&quot;, it's not programatically obvious
         whether a code represents a climb or destination.
     <li>How should destinations on geohash boundaries be handled?
-      (see the New River Gorge at 
+      (see the New River Gorge at
         <a href="https://geohash.softeng.co/dnw">dnw</a> and
-        <a href="https://geohash.softeng.co/dny">dny</a>) 
+        <a href="https://geohash.softeng.co/dny">dny</a>)
       <!-- TODO: verify that this is correct -->
     <li>
       What is an destination?
@@ -270,7 +264,7 @@
       <ul>
         <li>Is 3 digits precise enough for an destination?
         <li>Is 3 characters enough keyspace for an destination?
-            jtree has &gt;20,000 routes 
+            jtree has &gt;20,000 routes
             (see <a href="">this</a> citing
                  <a href="https://www.youtube.com/watch?v=HQUwdfuEkKk">this</a>)
 <code>Math.pow('abcdefghijklmnopqrstuvwxyz0123456789'.length, 4) == 1679616</code>
@@ -297,6 +291,38 @@
        and <a href="https://www.mountainproject.com/route/113230570/go">Go</a>)
     <li>Is Unicode okay?
       (see <a href="https://www.mountainproject.com/route/105835105/manana">Mañana</a>)
+  </ul>
+
+  <h2>Existing solutions outside of climbing</h2>
+  <p>
+    This the prior art relation to climb identification,
+    globally/universally unique ids,
+    and geospatial identification.
+  </p>
+
+  <h3>Big Random(ish) Things</h3>
+  <!-- https://sudhir.io/uuids-ulids -->
+  <ul>
+    <li><a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a>
+    <li><a href="https://github.com/ulid/spec">ULID</a>
+    <li>MongoDB's
+        <a href="https://www.mongodb.com/docs/manual/reference/method/ObjectId/">ObjectId</a>
+    <li>Youtube IDs
+        (<a href="https://www.youtube.com/watch?v=gocwRvLhDf8">video on capacity</a>)
+  </ul>
+
+  <h3>Geographally-based</h3>
+  <ul>
+    <li>Geohash
+      <ul>
+        <li><a href="https://wiki.openstreetmap.org/wiki/Geohash">OSM's Wiki</a></li>
+        <li><a href="http://geohash.org/">geohash.org</a></li>
+        <li><a href="https://www.movable-type.co.uk/scripts/geohash.html">a nice explorer</a></li>
+        <li><a href="https://geohash.softeng.co/">A nice explorer</a></li>
+      </ul>
+    </li>
+    <li><a href="https://what3words.com/">what3words</a></li>
+    <li><a href="">plus codes</a></li>
   </ul>
 
   <footer style="font-size:0.8em;">
