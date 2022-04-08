@@ -63,9 +63,9 @@
 <main>
   <div id="example-map"></div>
   <section id="example-text">
-    <h1>[WIP] Climb &amp; Area Code Examples</h1>
-    <p>These examples revolve around climbs in Yosemite Valley.</p>
-    <button id=focus-yosemite>Focus on Yosemite Valley</button>
+    <h1>Climb &amp; Area Code Examples</h1>
+    <p>These examples revolve around Yosemite</p>
+    <button id=focus-yosemite>Zoom to climbs</button>
     <hr>
     <aside class=todo>add examples to highlight potential conflicts</aside>
     <aside class=todo>better visualize how likely conflicts are</aside>
@@ -76,10 +76,13 @@
 <script>
   var map = L.map('example-map', {
     zoomControl: false,
-  }).setView({
-    "lat": 37.70555348721583,
-    "lng": -119.53399658203126
-  }, 6);
+  }).fitBounds([{
+    "lat": 14.859850400601037,
+    "lng": -116.09937702453847
+  }, {
+    "lat": 58.58543569119917,
+    "lng": -78.83375202453847
+  }]);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -153,7 +156,7 @@
     map.flyTo({
       lat: 37.742756727055514,
       lng: -119.60367878381095
-    }, 12})
+    }, 12)
   }
 
   let geohashes = {
