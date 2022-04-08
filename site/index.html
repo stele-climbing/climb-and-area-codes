@@ -8,8 +8,12 @@
   <meta name="description" content="designing & picking practical identifiers for climbs">
   <link rel="stylesheet" href="main.css">
   <style>
+    h2 {
+      margin-top: 3em;
+    }
     .codes-table {
       border-collapse: collapse;
+      margin-bottom: 1em;
     }
     .codes-table,
     .codes-table th,
@@ -29,68 +33,57 @@
   <h1>Consensus Climb &amp; Area Codes</h1>
   <div class="col-2">
     <p>
-      Our community already takes ad-hoc attempts at climb ids;
-      they're single-purpose and scattered.
-    </p>
-
-    <p>
       Climbing is growing quickly and guides are fragmenting.
-      A climb id strategy would let the community
+      An identification scheme would help climbers
       benefit from multiple guides and platforms.
     </p>
 
     <p>
-      The goal is to design a scheme that is accurate enough to be helpful,
-      but not so precise that it's a burden.
+      The id scheme should be accurate enough to be helpful,
+      but not so precise that it becomes cumbersome.
     </p>
 
-    <p>
-      For brevity, this refers to
-      <strong>Co</strong>nsensus <strong>C</strong>limb and <strong>A</strong>rea Codes as
-      "coca" codes.
-      This name isn't final.
-    </p>
   </div>
+
+  <p>
+    For brevity, this refers to
+    <strong>Co</strong>nsensus <strong>C</strong>limb and <strong>A</strong>rea Codes as
+    "coca" codes.
+  </p>
+  <p>
+    The name isn't final and this document is a draft.
+  </p>
 
   <hr>
 
-  <h2>Summary</h2>
+  <h2>Intro</h2>
   <p>
-    Coca Codes have a few goals (listed in decreasing importance):
+    Coca Codes should meet a few goals:
   </p>
   <ol>
-    <li>Offer concise, transparent identification for climbs and destination
-    <li>Be easily adoptable
-        (straightforward, low code, transparent)
-    <li>Be useful in multiple contexts
-        (computer and word-of-mouth)
-        (guidebooks and guide platforms)
-    <li>Allow the community to come to a consensus
+    <li>Offer concise, transparent identification for climbs and destinations</li>
+    <li>
+      Be easily adoptable (e.g., simple, low code, approachable)
+    </li>
+    <li>
+      Be useful in multiple contexts
+      <ul>
+        <li>readable and writable by computers and humans
+        <li>usable in printed guidebooks and digital guides
+      </ul>
+    </li>
+    <li>
+      Allow the community to come to a consensus
+      when codes differ
+    </li>
   </ol>
-  <p>
-    <strong>Destination Codes</strong> must be unique within ~200 miles (300 kilometers).
-    This is sufficiently accurate for casual communication.
-    A 3-character geohash is a sufficient prefix to distinguish these climbs.
-  </p>
-  <p>
-    <strong>Climb Codes</strong> should be unique within either 3 miles (5km)
-    <em>or</em> the destination that the climb is in, whichever contains more climbs.
-    This specificity is sufficiently precise for casual communication or use within a guidebook.
-    Also, when prefixed with a 6-character geohash, it will make for a code that is unique within the world.
-    Optionally, for better human friendliness, instead of the 6-character geohash prefix,
-    the destination's code can be used.
-  </p>
-<!--
-  <aside>
-    For context,
-    300km covers most of Southern California,
-    300km covers the Swiss Alps,
-    300km covers Boulder, Colorado Springs, and Gunnison.
-    Prefixing the destination
-  </aside>
--->
 
-  <h3>Destination Examples</h3>
+  <h3>Destination Codes</h3>
+  <p>
+    Destination Codes must be unique within ~200 miles (300 kilometers).
+    This is sufficiently accurate for casual conversation.
+    When prefixed with a 3-character geohash it will be globally unique.
+  </p>
   <table class="codes-table">
     <thead>
       <tr>
@@ -139,8 +132,27 @@
       </tr>
     </tbody>
   </table>
+<!--
+  <aside>
+    For context,
+    300km covers most of Southern California,
+    300km covers the Swiss Alps,
+    300km covers Boulder, Colorado Springs, and Gunnison.
+    Prefixing the destination
+  </aside>
+-->
 
-  <h3>Climb Examples</h3>
+
+  <h3>Climb Codes</h3>
+  <p>
+    Climb Codes should be unique within either 3 miles (5km)
+    <em>or</em> the destination that the climb is in,
+    whichever contains more climbs.
+    This sufficiently precise for casual conversation or use within a guidebook.
+    Also, when prefixed with a 6-character geohash, it will be globally unique.
+    <br>
+    Optionally, for improved human friendliness, the parent destination's code can be used.
+  </p>
   <table class="codes-table">
     <thead>
       <tr>
@@ -162,7 +174,6 @@
         <td>RED</td>
         <td class="codes-table__code">9qm:RED:PLC</td>
       </tr>
-
       <tr>
         <td colspan=2><a href="https://geohash.softeng.co/9qdywq">9qdywq</a></td>
         <td rowspan=2>MNL</td>
@@ -174,7 +185,6 @@
         <td>YOV</td>
         <td class="codes-table__code">9qd:YOV:MNL</td>
       </tr>
-
       <tr>
         <td colspan=2><a href="https://geohash.softeng.co/9qdyts">9qdyts</a></td>
         <td rowspan=2>NOS</td>
@@ -186,7 +196,6 @@
         <td>YOV</td>
         <td class="codes-table__code">9qd:YOV:NOS</td>
       </tr>
-
     </tbody>
   </table>
 
@@ -243,6 +252,38 @@
     <a href="//steleclimbing.gitlab.io/climb-and-area-code-viewer">here</a> or
   -->
 
+  <h2>Existing solutions outside of climbing</h2>
+  <p>
+    This the prior art relation to climb identification,
+    globally/universally unique ids,
+    and geospatial identification.
+  </p>
+
+  <h3>Big Random(ish) Things</h3>
+  <!-- https://sudhir.io/uuids-ulids -->
+  <ul>
+    <li><a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a>
+    <li><a href="https://github.com/ulid/spec">ULID</a>
+    <li>MongoDB's
+        <a href="https://www.mongodb.com/docs/manual/reference/method/ObjectId/">ObjectId</a>
+    <li>Youtube IDs
+        (<a href="https://www.youtube.com/watch?v=gocwRvLhDf8">video on capacity</a>)
+  </ul>
+
+  <h3>Geographally-based</h3>
+  <ul>
+    <li>Geohash
+      <ul>
+        <li><a href="https://wiki.openstreetmap.org/wiki/Geohash">OSM's Wiki</a></li>
+        <li><a href="http://geohash.org/">geohash.org</a></li>
+        <li><a href="https://www.movable-type.co.uk/scripts/geohash.html">a nice explorer</a></li>
+        <li><a href="https://geohash.softeng.co/">A nice explorer</a></li>
+      </ul>
+    </li>
+    <li><a href="https://what3words.com/">what3words</a></li>
+    <li><a href="">plus codes</a></li>
+  </ul>
+
   <h2>Questions & Issues</h2>
   <ul>
     <li>With using only the delimiter &quot;:&quot;, it's not programatically obvious
@@ -293,38 +334,6 @@
       (see <a href="https://www.mountainproject.com/route/105835105/manana">Mañana</a>)
   </ul>
 
-  <h2>Existing solutions outside of climbing</h2>
-  <p>
-    This the prior art relation to climb identification,
-    globally/universally unique ids,
-    and geospatial identification.
-  </p>
-
-  <h3>Big Random(ish) Things</h3>
-  <!-- https://sudhir.io/uuids-ulids -->
-  <ul>
-    <li><a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a>
-    <li><a href="https://github.com/ulid/spec">ULID</a>
-    <li>MongoDB's
-        <a href="https://www.mongodb.com/docs/manual/reference/method/ObjectId/">ObjectId</a>
-    <li>Youtube IDs
-        (<a href="https://www.youtube.com/watch?v=gocwRvLhDf8">video on capacity</a>)
-  </ul>
-
-  <h3>Geographally-based</h3>
-  <ul>
-    <li>Geohash
-      <ul>
-        <li><a href="https://wiki.openstreetmap.org/wiki/Geohash">OSM's Wiki</a></li>
-        <li><a href="http://geohash.org/">geohash.org</a></li>
-        <li><a href="https://www.movable-type.co.uk/scripts/geohash.html">a nice explorer</a></li>
-        <li><a href="https://geohash.softeng.co/">A nice explorer</a></li>
-      </ul>
-    </li>
-    <li><a href="https://what3words.com/">what3words</a></li>
-    <li><a href="">plus codes</a></li>
-  </ul>
-
   <footer style="font-size:0.8em;">
     <p>
       There aren't <em>that</em> many three-character geohashes that fall on land.
@@ -332,7 +341,7 @@
     </p>
     <p>
       For example, if the North American West Coast had the code <code>NAW</code>,
-      Could we get away with <code>NAW.YOV.NOSE</code> for The Nose?
+      Could we get away with <code>NAW:YOV:NOSE</code> for The Nose?
     </p>
     <hr>
     <a href="https://xkcd.com/927/">obligiatory xkcd</a>

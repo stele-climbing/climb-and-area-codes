@@ -29,10 +29,10 @@ aside.todo::before {
 
 .col-2 {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 .col-2 > * {
   display: block;
-  width: 45%;
-  justify-content: space-between;
+  width: 48%;
 }
