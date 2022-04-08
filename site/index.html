@@ -48,10 +48,10 @@
   <p>
     For brevity, this refers to
     <strong>Co</strong>nsensus <strong>C</strong>limb and <strong>A</strong>rea Codes as
-    "coca" codes.
+    &quot;coca&quot; codes.
   </p>
   <p>
-    The name isn't final and this document is a draft.
+    The name isn&apos;t final and this document is a draft.
   </p>
 
   <hr>
@@ -132,6 +132,42 @@
       </tr>
     </tbody>
   </table>
+  <aside class="todo">
+    the following few paragraphs are an <code>&lt;aside&gt;</code>
+    which should be styled appropriately.
+  </aside>
+  <aside>
+    <p>
+      The term <em>destination</em> here is used for the idea of
+      a geographic boundary that doesn&apos;t overlap or nest.
+      The term <em>area</em>, as generally used, is too vague to be practical for our purposes.
+    <p>
+    <p>
+      Take the The Red River Gorge: from North to South it&apos;s about
+      <a href="https://www.redriverclimbing.com/RRCGuide/?type=map">20 miles</a>,
+      and it contains smaller regions,
+      sometimes sub-divided by ownership,
+      which contain crags,
+      these can be organized by walls,
+      and sometimes divided further into sections of walls. 
+      <!--
+      For example, within the Red River Gorge
+      &rarr; Southern Region
+      &rarr; Bald Rock Fork Recreational Preserve (BRRP)
+      &rarr; Motherlode
+      &rarr; Madness Cave.
+      Each of these could be reffered to as an <em>area</em>.
+      -->
+    </p>
+
+    </p>
+      The Red River Gorge is an extreme example that
+      highlights the mess around what's considered an area.
+      For our purposes, we need a simple solution to identify climbs;
+      adding <em>areas</em> could get out of hand quickly.
+    </p>
+    
+  </aside>
 <!--
   <aside>
     For context,
@@ -151,7 +187,7 @@
     This sufficiently precise for casual conversation or use within a guidebook.
     Also, when prefixed with a 6-character geohash, it will be globally unique.
     <br>
-    Optionally, for improved human friendliness, the parent destination's code can be used.
+    Optionally, for improved human friendliness, the parent destination&apos;s code can be used.
   </p>
   <table class="codes-table">
     <thead>
@@ -166,7 +202,7 @@
       <tr>
         <td colspan=2><a href="https://geohash.softeng.co/9qmvtw">9qmvtw</a></td>
         <td rowspan=2>PLC</td>
-        <td rowspan=2>Plumber's Crack</td>
+        <td rowspan=2>Plumber&apos;s Crack</td>
         <td class="codes-table__code">9qmvtw:PLC</td>
       </tr>
       <tr>
@@ -212,7 +248,7 @@
         <!-- abstract ids or non-literal names prevent renaming issues -->
     <li>upload to services or contact guidebook authors
   </ol>
-  <!-- TODO: make this a simple flow chart -->
+  <aside class=todo>make a simple flow chart for this</aside>
 
   <h2>Implementing Coca Codes</h2>
 
@@ -234,6 +270,11 @@
       <li><strong>url</strong>
     </ul>
 <pre class="file-contents">9qdytse	NOS	The Nose	https://www.thecrag.com/20685193</pre>
+    <aside class=todo>
+      find something better?
+      a geohash isn&apos;t ideal.
+      latlng coordinates and parent-destination isn&apos;t great either.
+    </aside>
   </section>
 
   <section>
@@ -284,27 +325,43 @@
     <li><a href="">plus codes</a></li>
   </ul>
 
-  <h2>Questions & Issues</h2>
-  <ul>
+  <h2>Questions, Issues, and Comments</h2>
+  <style>
+    .issues {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    .issues > li {
+      padding: 0;
+      margin: 0;
+      margin-bottom: 2em;
+    }
+  </style>
+  <ul class=issues>
+    <li>
+      The codes should be durable.
+      <ul>
+        <li>Alabama Hills, in CA is divided between <code>9qe</code> and <code>9qs</code>
+        <li>Estes Park, in CO is close to both <code>9xh</code> and <code>9xj</code>
+      </ul>
+      This scheme should be able to handle these close calls.
+    </li>
     <li>With using only the delimiter &quot;:&quot;, it's not programatically obvious
         whether a code represents a climb or destination.
-    <li>How should destinations on geohash boundaries be handled?
-      (see the New River Gorge at
-        <a href="https://geohash.softeng.co/dnw">dnw</a> and
-        <a href="https://geohash.softeng.co/dny">dny</a>)
-      <!-- TODO: verify that this is correct -->
+    </li>
     <li>
-      What is an destination?
+      What is a destination?
       <br>(e.g., Yosemite National Park, Yosemite Valley, Upper Yosemite Valley, El Capitain)
       <br> Does it really matter? What are the consequences?
     </li>
-    <li>Can I use 4 letters for an destination? 5 letters?
+    <li>Can I use 4 letters for a destination? 5 letters?
     <li>Pick letters to reflect spelling or phoenetics? GUNKS vs GUNK vs GNK vs GNX?
       <!-- TODO: a test to check if there's enough space in a populated destination -->
     <li>Precision and keyspace <!-- is this the correct word -->
       <ul>
-        <li>Is 3 digits precise enough for an destination?
-        <li>Is 3 characters enough keyspace for an destination?
+        <li>Is 3 digits precise enough for a destination?
+        <li>Is 3 characters enough keyspace for a destination?
             jtree has &gt;20,000 routes
             (see <a href="">this</a> citing
                  <a href="https://www.youtube.com/watch?v=HQUwdfuEkKk">this</a>)

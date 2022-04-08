@@ -64,17 +64,19 @@
   <div id="example-map"></div>
   <section id="example-text">
     <h1>[WIP] Climb &amp; Area Code Examples</h1>
-    <p><strong>TODO:</strong></p>
-    <ul>
-      <li>add examples to highlight potential conflicts</li>
-      <li>better visualize how likely conflicts are</li>
-      <li>make radii adjustable (to experiment)</li>
-    </ul>
+    <p>These examples revolve around climbs in Yosemite Valley.</p>
+    <button id=focus-yosemite>Focus on Yosemite Valley</button>
+    <hr>
+    <aside class=todo>add examples to highlight potential conflicts</aside>
+    <aside class=todo>better visualize how likely conflicts are</aside>
+    <aside class=todo>make radii adjustable (to experiment)</aside>
   <section>
 </main>
 
 <script>
-  var map = L.map('example-map').setView({
+  var map = L.map('example-map', {
+    zoomControl: false,
+  }).setView({
     "lat": 37.70555348721583,
     "lng": -119.53399658203126
   }, 6);
@@ -87,7 +89,13 @@
   let tuolumne = [37.8472, -119.4359]
   let redRocks = [36.15, -115.46];
 
+  let happyBoulders = [37.41712615728517, -118.45059837595089];
+  let sadBoulders = [37.420062594663506, -118.43410533158263];
+  let buttermilks = [37.32881243152914, -118.57601442025562];
+
   let theNose = [37.728263, -119.636429];
+  let midnightLightning = [37.74175049841879, -119.60350876180672];
+  let snakeDike = [37.74080601297071, -119.53959835291352];
   let plumbersCrack = [36.159901156092936, -115.41711407792825];
   let highExposure = [41.74125492959943, -74.18214106803914]; // maybe wrong
 
@@ -140,6 +148,14 @@
     circle.addTo(map);
   }
 
+
+  document.getElementById('focus-yosemite').onclick = function focusYosemite(){
+    map.flyTo({
+      lat: 37.742756727055514,
+      lng: -119.60367878381095
+    }, 12})
+  }
+
   let geohashes = {
     '9qd': [37, -120],
     '9qe': [37, -119],
@@ -158,8 +174,17 @@
   }
 
   climbMarker(theNose, 'The Nose');
+  climbMarker(midnightLightning, 'Midnight Lightning');
+  climbMarker(snakeDike, 'Snake Dike');
+
   areaMarker(yosemite, 'Yosemite Valley');
   areaMarker(tuolumne, 'Tuolumne Meadows');
+  areaMarker(happyBoulders, 'Happy Boulders');
+  areaMarker(sadBoulders, 'Sad Boulders');
+  areaMarker(buttermilks, 'Buttermilks');
+  areaMarker(redRocks, 'Red Rocks');
+
+  map.on('click', e => console.log(e))
 
 </script>
 

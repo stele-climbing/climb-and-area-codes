@@ -23,7 +23,7 @@ aside.todo::before {
 .file-contents {
   background-color: #eee;
   border: solid black 1px;
-  padding: 2em;
+  padding: 1em;
   overflow-x: scroll;
 }
 
