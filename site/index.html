@@ -13,6 +13,7 @@
     }
     .codes-table {
       border-collapse: collapse;
+      margin: auto;
       margin-bottom: 1em;
     }
     .codes-table,
@@ -25,11 +26,17 @@
     .codes-table__code {
       font-family: monospace;
     }
+
+    main {
+      max-width: 600px;
+      margin: auto;
+    }
   </style>
 </head>
 
 <body>
-<main style="max-width:600px;margin:auto;">
+<main>
+
   <h1>Consensus Climb &amp; Area Codes</h1>
   <div class="col-2">
     <p>
@@ -37,12 +44,10 @@
       An identification scheme would help climbers
       benefit from multiple guides and platforms.
     </p>
-
     <p>
       The id scheme should be accurate enough to be helpful,
       but not so precise that it becomes cumbersome.
     </p>
-
   </div>
 
   <p>
@@ -77,7 +82,7 @@
       when codes differ
     </li>
   </ol>
-
+  
   <h3>Destination Codes</h3>
   <p>
     Destination Codes must be unique within ~200 miles (300 kilometers).
@@ -142,30 +147,33 @@
       a geographic boundary that doesn&apos;t overlap or nest.
       The term <em>area</em>, as generally used, is too vague to be practical for our purposes.
     <p>
-    <p>
-      Take the The Red River Gorge: from North to South it&apos;s about
-      <a href="https://www.redriverclimbing.com/RRCGuide/?type=map">20 miles</a>,
-      and it contains smaller regions,
-      sometimes sub-divided by ownership,
-      which contain crags,
-      these can be organized by walls,
-      and sometimes divided further into sections of walls. 
-      <!--
-      For example, within the Red River Gorge
-      &rarr; Southern Region
-      &rarr; Bald Rock Fork Recreational Preserve (BRRP)
-      &rarr; Motherlode
-      &rarr; Madness Cave.
-      Each of these could be reffered to as an <em>area</em>.
-      -->
-    </p>
-
-    </p>
-      The Red River Gorge is an extreme example that
-      highlights the mess around what's considered an area.
-      For our purposes, we need a simple solution to identify climbs;
-      adding <em>areas</em> could get out of hand quickly.
-    </p>
+    <details>
+      <summary>Area/Destination Differences</summary>
+      <p>
+        Take the The Red River Gorge: from North to South it&apos;s about
+        <a href="https://www.redriverclimbing.com/RRCGuide/?type=map">20 miles</a>,
+        and it contains smaller regions,
+        sometimes sub-divided by ownership,
+        which contain crags,
+        these can be organized by walls,
+        and sometimes divided further into sections of walls. 
+        <!--
+        For example, within the Red River Gorge
+        &rarr; Southern Region
+        &rarr; Bald Rock Fork Recreational Preserve (BRRP)
+        &rarr; Motherlode
+        &rarr; Madness Cave.
+        Each of these could be reffered to as an <em>area</em>.
+        -->
+      </p>
+      
+      </p>
+        The Red River Gorge is an extreme example that
+        highlights the mess around what's considered an area.
+        For our purposes, we need a simple solution to identify climbs;
+        adding <em>areas</em> could get out of hand quickly.
+      </p>
+    </details>
     
   </aside>
 <!--
@@ -234,14 +242,12 @@
       </tr>
     </tbody>
   </table>
-
-  <p>Also, see <a href="examples/">interactive examples</a></p>
-
-  <!-- TODO: make these links, or link to ./examples/ -->
+  <p>
+    Also, see <a href="examples/">interactive examples</a>
+  </p>
 
   <h2>How to pick codes</h2>
   Assuming you have a climb (or destination) and you want a code for it:
-
   <ol>
     <li>check a Coca explorer (and guidebooks) to see if a code already exists
     <li>pick a code
@@ -251,11 +257,9 @@
   <aside class=todo>make a simple flow chart for this</aside>
 
   <h2>Implementing Coca Codes</h2>
-
   <aside class="todo">add hints and guidelines for services that want to support coca codes</aside>
 
   <h3>How to publish codes</h3>
-
   <p>
     Simplicity is the goal.
     A <a href="https://en.wikipedia.org/wiki/Tab-separated_values" title="text/tab-separated-values">TSV</a>
@@ -300,7 +304,7 @@
     and geospatial identification.
   </p>
 
-  <h3>Big Random(ish) Things</h3>
+  <h3>Big Random(ish) Values</h3>
   <!-- https://sudhir.io/uuids-ulids -->
   <ul>
     <li><a href="https://datatracker.ietf.org/doc/html/rfc4122">UUIDs</a>
@@ -311,7 +315,7 @@
         (<a href="https://www.youtube.com/watch?v=gocwRvLhDf8">video on capacity</a>)
   </ul>
 
-  <h3>Geographally-based</h3>
+  <h3>Geospatial</h3>
   <ul>
     <li><a href="http://geohash.org/">geohash</a></li>
       <ul>
@@ -328,7 +332,11 @@
     </li>
     <li><a href="https://maps.google.com/pluscodes/">plus codes</a></li>
   </ul>
-  <p>The article <a href="https://en.wikipedia.org/wiki/Geocode">Geocode</a> offers <em>many</em> other options</p>
+  <p>
+    The article
+    <a href="https://en.wikipedia.org/wiki/Geocode">Geocode</a>
+    offers <em>many</em> other options
+  </p>
 
   <h3>Other</h3>
   <ul>
