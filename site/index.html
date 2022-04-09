@@ -65,7 +65,7 @@
     Essentially, Coca Codes are common abbreviations for climbs and climbing destinations.
   </p>
   <p>
-    They should meet a few goals:
+    These codes should meet a few goals:
   </p>
   <ol>
     <li>Offer concise, transparent identification for climbs and destinations</li>
@@ -250,7 +250,13 @@
     Also, see <a href="examples/">interactive examples</a>
   </p>
 
-  <h2>How to pick codes</h2>
+  <h2>Using Coca Codes as a climber</h2>
+  <aside class="todo">
+    this will be a short section about how to take advantage of the codes;
+    climbers in general will only be treating them as a tool.
+  </aside>
+
+  <h2>Using Coca Codes as a climbing developer</h2>
   Assuming you have a climb (or destination) and you want a code for it:
   <ol>
     <li>check a Coca explorer (and guidebooks) to see if a code already exists
@@ -260,16 +266,25 @@
   </ol>
   <aside class=todo>make a simple flow chart for this</aside>
 
-  <h2>Implementing Coca Codes</h2>
-  <aside class="todo">add hints and guidelines for services that want to support Coca codes</aside>
 
-  <h3>How to publish codes</h3>
+  <h2>Using Coca Codes as a guidebook author or platform</h2>
+  <aside class="todo">add hints and guidelines for services that want to support Coca codes</aside>
   <p>
     Simplicity is the goal.
     A <a href="https://en.wikipedia.org/wiki/Tab-separated_values" title="text/tab-separated-values">TSV</a>
     documents would be easy to create, share, and use.
+    Generating a TSV is trivial with Excel or any programming language.
   </p>
+  <aside class="todo">
+    The fourth field in these documents is <code>url</code>.
+    Is this a practical/approachable/useful for printed guidebooks?
+  </aside>
 
+  <h3>Publish Climb Codes</h3>
+  <p>
+    Climbs should be listed in a publicly available <span class="filename">coca-climbs.tsv</span>
+    with 4 fields:
+  </p>
   <section>
     <ul>
       <li><strong>geohash</strong>
@@ -285,21 +300,25 @@
     </aside>
   </section>
 
+  <h3>Publish Destination Codes</h3>
+  <p>
+    Destinations should be listed in a publicly available <span class="filename">coca-destinations.tsv</span>
+    with 4 fields:
+  </p>
   <section>
     <ul>
-      <li><strong>geohash</strong> <!-- TODO: suggest specificity -->
+      <li><strong>geohash</strong>
       <li><strong>Coca Code</strong>
       <li><strong>destination name</strong>
       <li><strong>url</strong>
     </ul>
 <pre class="file-contents">9qd	YOV	Yosemite Valley	https://www.thecrag.com/14343655</pre>
   </section>
-
-  <!--
-    If you're implementing Coca Codes,
-    link to a viewer (to be written)
-    <a href="//steleclimbing.gitlab.io/climb-and-area-code-viewer">here</a> or
-  -->
+  <aside class="todo">
+    Implement a Coca Code explorer.
+    The explorer will take paths to these tsv files and 1) plot them on a map and 2) draw attention to potential conflicts.
+    This should help authors/developers use established codes or unify when codes differ.
+  </aside>
 
   <h2>Existing solutions outside of climbing</h2>
   <p>

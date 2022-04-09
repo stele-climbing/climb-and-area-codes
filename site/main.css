@@ -27,6 +27,12 @@ aside.todo::before {
   overflow-x: scroll;
 }
 
+.filename {
+  background-color: #eee;
+  border: solid black 1px;
+  padding: 0 0.25em;
+}
+
 .col-2 {
   display: flex;
   flex-flow: row wrap;
