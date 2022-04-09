@@ -7,7 +7,7 @@ It's static HTML. You can view it
 and submit issues and patches on
 [gitlab](https://gitlab.com/stele-climbing/climb-and-area-codes)
 (or [github](https://github.com/stele-climbing/climb-and-area-codes)).
-Any local server shoul be fine for development.
+Any local server should be fine for development.
 
 ```sh
 $ (cd site; python3 -m http.server 8000)
