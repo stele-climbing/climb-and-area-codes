@@ -60,7 +60,7 @@
 
   <hr>
 
-  <h2>Intro</h2>
+  <h2>Overview</h2>
   <p>
     Essentially, Coca Codes are common abbreviations for climbs and climbing destinations.
   </p>
@@ -233,13 +233,13 @@
     Also, see <a href="examples/">interactive examples</a>
   </p>
 
-  <h2>Using Coca Codes as a climber</h2>
+  <h2>For climbers</h2>
   <aside class="todo">
     this will be a short section about how to take advantage of the codes;
     climbers in general will only be treating them as a tool.
   </aside>
 
-  <h2>Using Coca Codes as a climbing developer</h2>
+  <h2>For climbing developers</h2>
   Assuming you have a climb (or destination) and you want a code for it:
   <ol>
     <li>check a Coca explorer (and guidebooks) to see if a code already exists
@@ -250,7 +250,7 @@
   <aside class=todo>make a simple flow chart for this</aside>
 
 
-  <h2>Using Coca Codes as a guidebook author or platform</h2>
+  <h2>For guidebook authors and platforms</h2>
   <aside class="todo">add hints and guidelines for services that want to support Coca codes</aside>
   <p>
     Simplicity is the goal.
@@ -258,24 +258,36 @@
     documents would be easy to create, share, and use.
     Generating a TSV is trivial with Excel or any programming language.
   </p>
-  <aside class="todo">
-    The fourth field in these documents is <code>url</code>.
-    Is this a practical/approachable/useful for printed guidebooks?
-  </aside>
 
-  <h3>Publish Climb Codes</h3>
+  <h3>Store Coca Codes and Coordinates</h3>
   <p>
-    Climbs should be listed in a publicly available <span class="filename">coca-climbs.tsv</span>
-    with 4 fields:
+  </p>
+
+  <h3>Publish Coca Codes</h3>
+  <p>
+    Climbs and Destinations should be listed in a <span class="filename">coca-codes.tsv</span> file
+    with five fields:
   </p>
   <section>
     <ul>
-      <li><strong>geohash</strong>
-      <li><strong>Coca code</strong>
-      <li><strong>climb name</strong>
-      <li><strong>url</strong>
+      <li>
+        <strong>Type</strong> this should be either &quot;c&quot; for climb or <code>d</code> for destination
+      </li>
+      <li>
+        <strong>Geohash</strong>
+      </li>
+      <li>
+        <strong>Coca Code</strong>
+      </li>
+      <li>
+        <strong>Name</strong>
+      </li>
+      <li>
+        <strong>URL</strong>
+      </li>
     </ul>
-<pre class="file-contents">9qdyts	NOS	The Nose	https://www.thecrag.com/20685193</pre>
+<pre class="file-contents">c	9qdyts	NOS	The Nose	https://www.example.com/climbs/the-nose/
+d	9qd	YOV	Yosemite Valley	https://www.example.com/areas/yosemite-valley/</pre>
     <aside class=todo>
       find something better?
       a geohash isn&apos;t ideal.
@@ -283,24 +295,14 @@
     </aside>
   </section>
 
-  <h3>Publish Destination Codes</h3>
-  <p>
-    Destinations should be listed in a publicly available <span class="filename">coca-destinations.tsv</span>
-    with 4 fields:
-  </p>
-  <section>
-    <ul>
-      <li><strong>geohash</strong>
-      <li><strong>Coca Code</strong>
-      <li><strong>destination name</strong>
-      <li><strong>url</strong>
-    </ul>
-<pre class="file-contents">9qd	YOV	Yosemite Valley	https://www.thecrag.com/14343655</pre>
-  </section>
   <aside class="todo">
-    Implement a Coca Code explorer.
+    Implement a <a href="explorer/">Coca Code explorer</a>.
     The explorer will take paths to these tsv files and 1) plot them on a map and 2) draw attention to potential conflicts.
     This should help authors/developers use established codes or unify when codes differ.
+  </aside>
+  <aside class="todo">
+    The last field in these documents is <code>url</code>.
+    What would be practical for printed guidebooks?
   </aside>
 
   <h2>Existing solutions outside of climbing</h2>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coca Code Explorer</title>
+  <meta name="description" content="View Coca Codes">
+  <link rel="stylesheet" href="../main.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+          integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+          crossorigin=""></script>
+</head>
+
+<body>
+
+<style>
+  #main-header {
+  }
+  #main-header > * {
+    margin-bottom: 0.5em;
+  }
+  #main-header textarea {
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  main {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  main .collect {
+    max-width: 500px;
+    padding-right: 15px;
+  }
+  main .review {
+  }
+
+  .label-width {
+    font-weight: bold;
+    width: 10em;
+    display: inline-block;
+  }
+
+  .not-too-wide {
+    max-width: 15em;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>
+
+<main>
+<div class="collect">
+  <header id="main-header">
+    <section>
+      <h1>Coca Code Explorer</h1>
+      <p>
+        The community assigns Coca Codes for climbs and destinations.
+        Each guidbook and guide platform publishes their codes.
+      <p>
+      </p>
+        Use this explorer to aggregate multiple sources of Coca Codes.
+        Find climbs and identify codes that differ (changes can be submitted to the publisher).
+      </p>
+    </section>
+    <h2>Add Sources</h2>
+    <div>
+      <button id="add-unofficial-example-thecrag">Add unoffical example data for theCrag</button>
+      <br>
+      <button id="add-unofficial-example-mountainproject">Add unofficial example data for MountainProject</button>
+    </div>
+    <label>
+      <span class="label-width">Add from URL:</span>
+      <input type=text id="url-input" placeholder="url"/>
+    </label>
+    <br>
+    <label>
+      <span class="label-width">Pick a File:</span>
+      <input type=file id="file-picker" accept="text/tab-separated-values,.csv,.tsv"/>
+    </label>
+    <br>
+    <div>
+      <span class="label-width">Add plain text (TSV):</span>
+      <textarea disabled id="manual" placeholder="coca-codes.tsv (user input)">c	9qdyts	NOS	The Nose	https://example.com/the-nose/</textarea>
+    </div>
+    <aside class=todo>
+      introduce a user-friendly way for a climber to add and test a new code against the known datasets.
+      This will probably be a pin on a map, radio button for climb/destination, and text inputs for code, name.
+    </aside>
+  </header>
+</div>
+<div class="review">
+  <section id="all">
+    <h2>Combined Codes</h2>
+    <aside class=todo>show a map here</aside>
+    <section id="sources">
+      <h3>Sources Included</h3>
+      <ul id="source-list">
+      </ul>
+    </section>
+    <h3>Destinations</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Geohash</th>
+          <th>Coca Code</th>
+          <th>Destination</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody id="destination-codes">
+      </tbody>
+    </table>
+    <h3>Climbs</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Geohash</th>
+          <th>Coca Code</th>
+          <th>Climb</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody id="climb-codes"></tbody>
+    </table>
+    <h3>Warnings</h3>
+    <aside class=todo>check the combined sources for conflict and warn the user</aside>
+  </section>
+</div>
+</main>
+
+<script>
+
+  class Sources {
+    constructor(){
+      this._sources = {};
+    }
+    addTsv(tsv, src, from){
+      this._sources[src] = {
+        from: from,
+        txt: tsv,
+        table: tsv.split('\n').map(r => r.split('\t')),
+      }
+    }
+    loadFromUrl(url){
+      return fetch(url).then(res => {
+        return res.text()
+      }).then(txt => {
+        this.addTsv(txt, url, 'URL');
+        return this;
+      });
+    }
+    loadFile(f){
+      console.error('adding File objects is not yet supported', f);
+      // this.addTsv(txt, src, 'FILE');
+    }
+    remove(src){
+      delete this._sources[src];
+    }
+    getSources(){
+      return Object.keys(this._sources).map(k => {
+        return {
+          source: k,
+          data: this._sources[k],
+        }
+      })
+    }
+    getAllCodes(){
+      let c = [];
+      Object.keys(this._sources).forEach(src => {
+        this._sources[src].table.forEach((row, i) => {
+          c.push({
+            source: src,
+            type: row[0],
+            geohash: row[1],
+            cocaCode: row[2],
+            name: row[3],
+            url: row[4],
+            line: (i + 1),
+          })
+        })
+      })
+      return c;
+    }
+    getDestinationCodes(){
+      return this.getAllCodes().filter(x => x.type === 'd');
+    }
+    getClimbCodes(){
+      return this.getAllCodes().filter(x => x.type === 'c');
+    }
+  }
+
+  let sources = new Sources();
+
+  function update(){
+    let sl = document.querySelector('#source-list')
+    sl.innerHTML = '';
+    for (let s of sources.getSources()) {
+      let li = document.createElement('li');
+      li.innerText = s.source;
+      sl.appendChild(li);
+    }
+
+    let cc = document.querySelector('#climb-codes')
+    cc.innerHTML = '';
+    console.log(cc);
+    for (let s of sources.getClimbCodes()) {
+      console.log(s);
+      let tr = document.createElement('tr');
+      let tdGeohash = document.createElement('td');
+      let tdCode = document.createElement('td');
+      let tdClimb = document.createElement('td');
+      let tdSource = document.createElement('td');
+      tr.appendChild(tdGeohash)
+      tr.appendChild(tdCode)
+      tr.appendChild(tdClimb)
+      tr.appendChild(tdSource)
+
+      let gh = document.createElement('a');
+      gh.href = 'http://geohash.org/' + s.geohash
+      gh.innerText = s.geohash;
+      tdGeohash.appendChild(gh);
+
+      let code = document.createElement('code');
+      code.innerText = s.cocaCode;
+      tdCode.appendChild(code);
+
+      let name = document.createElement('a');
+      name.href = s.url;
+      name.innerText = s.name;
+      tdClimb.appendChild(name);
+
+      let src = document.createElement('span')
+      src.setAttribute('class', 'not-too-wide');
+      src.innerText = `line ${s.line} of ${s.source}`;
+      tdSource.appendChild(src);
+
+      cc.appendChild(tr);
+    }
+
+    let dc = document.querySelector('#destination-codes')
+    dc.innerHTML = '';
+    for (let s of sources.getDestinationCodes()) {
+      let tr = document.createElement('tr');
+      let tdGeohash = document.createElement('td');
+      let tdCode = document.createElement('td');
+      let tdClimb = document.createElement('td');
+      let tdSource = document.createElement('td');
+      tr.appendChild(tdGeohash)
+      tr.appendChild(tdCode)
+      tr.appendChild(tdClimb)
+      tr.appendChild(tdSource)
+
+      let gh = document.createElement('a');
+      gh.href = 'http://geohash.org/' + s.geohash
+      gh.innerText = s.geohash;
+      tdGeohash.appendChild(gh);
+
+      let code = document.createElement('code');
+      code.innerText = s.cocaCode;
+      tdCode.appendChild(code);
+
+      let name = document.createElement('a');
+      name.href = s.url;
+      name.innerText = s.name;
+      tdClimb.appendChild(name);
+
+      let src = document.createElement('span')
+      src.setAttribute('class', 'not-too-wide');
+      src.innerText = `line ${s.line} of ${s.source}`;
+      tdSource.appendChild(src);
+
+      dc.appendChild(tr);
+    }
+
+    return null;
+  }
+
+  document.getElementById('add-unofficial-example-thecrag').onclick = function(){
+    let url = new URL('./unofficial-example/thecrag/coca-codes.tsv', document.location);
+
+    sources.loadFromUrl(url).then(_ => update());
+  }
+
+  document.getElementById('add-unofficial-example-mountainproject').onclick = function(){
+    let url = new URL('./unofficial-example/mountainproject/coca-codes.tsv', document.location);
+    sources.loadFromUrl(url).then(_ => update());
+  }
+
+  document.querySelector('#file-picker').addEventListener('change', function(e){
+    for (let f of this.files) 
+      sources.loadFile(f);
+  }, false);
+
+  update();
+
+</script>
+
+</body>
+</html>
+
