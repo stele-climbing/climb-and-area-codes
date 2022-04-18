@@ -27,7 +27,7 @@ These codes should meet a few goals:
   
 ### Destination Codes
   
-![300km rule](300km-rule.svg)
+![300km rule](300km-rule.png)
 
 Destination Codes must be unique within ~200 miles (300 kilometers).
 This is sufficiently accurate for casual conversation.
@@ -111,7 +111,7 @@ is too vague to be practical for our purposes.
 
 ### Climb Codes
 
-![5km rule](5km-rule.svg)
+![5km rule](5km-rule.png)
   
 Climb Codes should be unique within either 3 miles (5km)
 _or_ the destination that the climb is in,
