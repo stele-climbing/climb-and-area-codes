@@ -195,7 +195,7 @@
     return L.marker(pt, {icon: i}).bindPopup(a);
   }
 
-  function climbMarker(pt, n){
+  function climbMarker(pt, n, c){
     let i = L.divIcon({
       iconSize: [15, 15],
       className: 'climb-icon',
@@ -208,7 +208,7 @@
       fill: false,
       dashArray: '5 8',
       radius: 5 * 1000
-    }).bindPopup('the code for ' + n + ' should be unique within 5km');
+    }).bindPopup(`the code "${c}" for ${n} should be unique within 5km`);
     marker.addTo(map);
     circle.addTo(map);
   }
@@ -219,7 +219,7 @@
     return [p0 / pts.length, p1 / pts.length];
   }
 
-  function destinationPerimeter(pts, n){
+  function destinationPerimeter(pts, n, c){
     let center = centroid(pts);
     let i = L.divIcon({
       iconSize: [18, 18],
@@ -236,7 +236,7 @@
       fill: false,
       dashArray: '5 8',
       radius: 300 * 1000
-    }).bindPopup('the code for ' + n + ' should be unique within 300km');
+    }).bindPopup(`the code "${c}" for ${n} should be unique within 300km`);
     poly.addTo(map);
     dot.addTo(map);
     circle.addTo(map);
@@ -259,17 +259,18 @@
     geohashMarkers[key].addTo(map);
   }
 
-  climbMarker(theNose, 'The Nose');
-  climbMarker(midnightLightning, 'Midnight Lightning');
-  climbMarker(snakeDike, 'Snake Dike');
+  climbMarker(theNose,           'The Nose',           'NOSE');
+  climbMarker(midnightLightning, 'Midnight Lightning', 'MNL');
+  climbMarker(snakeDike,         'Snake Dike',         'SNK');
 
-  destinationPerimeter(happyBoulders, 'Happy Boulders');
-  destinationPerimeter(sadBoulders, 'Sad Boulders');
-  destinationPerimeter(buttermilks, 'Buttermilks');
+//  destinationPerimeter(happyBoulders, 'Happy Boulders');
+//  destinationPerimeter(sadBoulders, 'Sad Boulders');
 
-  destinationPerimeter(tuolumne, 'Tuolumne Meadows');
-  destinationPerimeter(yosemite, 'Yosemite Valley');
-  destinationPerimeter(redRocks, 'Red Rocks');
+  destinationPerimeter(buttermilks, 'Buttermilks', 'BTR');
+
+  destinationPerimeter(tuolumne, 'Tuolumne Meadows', 'TUO');
+  destinationPerimeter(yosemite, 'Yosemite Valley',  'YOV');
+  destinationPerimeter(redRocks, 'Red Rocks',        'RRK');
 
   document.getElementById('focus-yosemite').onclick = function focusYosemite(){
     map.flyTo({
@@ -282,4 +283,3 @@
 
 </body>
 </html>
-

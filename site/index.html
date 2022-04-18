@@ -19,10 +19,34 @@
     .codes-table,
     .codes-table th,
     .codes-table td {
-      border: solid black 1px;
       border-collapse: collapse;
-      padding: 0.5em;
+      padding: 0.5em 1em;
+      border: solid black 1px;
     }
+    .codes-table {
+      border: solid white 1px;
+    }
+/*
+    .codes-table th,
+    .codes-table td {
+      border: solid black 1px;
+    }
+    .codes-table th:last-child,
+    .codes-table td:last-child {
+      border-right: none;
+    }
+    .codes-table th:first-child,
+    .codes-table td:first-child {
+      border-left: none;
+    }
+    .codes-table tr:first-child th {
+      border-top: none;
+    }
+    .codes-table tr:last-child th,
+    .codes-table tr:last-child td {
+      border-bottom: none;
+    }
+*/
     .codes-table__code {
       font-family: monospace;
     }
@@ -84,8 +108,9 @@
       when codes differ
     </li>
   </ol>
-  
+
   <h3>Destination Codes</h3>
+  <img src='300km-rule.svg' style="max-width:250px;margin:auto;display:block;">
   <p>
     Destination Codes must be unique within ~200 miles (300 kilometers).
     This is sufficiently accurate for casual conversation.
@@ -175,6 +200,7 @@
   </details>
 
   <h3>Climb Codes</h3>
+  <img src="5km-rule.svg" style="max-width:300px;margin:auto;display:block;">
   <p>
     Climb Codes should be unique within either 3 miles (5km)
     <em>or</em> the destination that the climb is in,
@@ -296,13 +322,9 @@ d	9qd	YOV	Yosemite Valley	https://www.example.com/areas/yosemite-valley/</pre>
   </section>
 
   <aside class="todo">
-    Implement a <a href="explorer/">Coca Code explorer</a>.
-    The explorer will take paths to these tsv files and 1) plot them on a map and 2) draw attention to potential conflicts.
+    Expand on the <a href="explorer/">Coca Code explorer</a>.
+    The explorer will take locations of these tsv files and 1) plot them on a map and 2) draw attention to potential conflicts.
     This should help authors/developers use established codes or unify when codes differ.
-  </aside>
-  <aside class="todo">
-    The last field in these documents is <code>url</code>.
-    What would be practical for printed guidebooks?
   </aside>
 
   <h2>Existing solutions outside of climbing</h2>
