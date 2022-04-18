@@ -113,7 +113,7 @@ is too vague to be practical for our purposes.
 ![5km rule](5km-rule.png)
   
 
-Climb Codes should be unique within either 3 miles (5km).
+Climb Codes should be unique within 3 miles (5km).
 This sufficiently precise for casual conversation or use within a guidebook.
 Also, when prefixed with a 6-character geohash, it will be globally unique.
 
