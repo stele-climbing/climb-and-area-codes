@@ -99,7 +99,7 @@ is too vague to be practical for our purposes.
     these can be organized by walls,
     and sometimes divided further into sections of walls. 
   </p>
-  
+
   </p>
     The Red River Gorge is an extreme example that
     highlights the mess around what's considered an area.
@@ -111,7 +111,6 @@ is too vague to be practical for our purposes.
 ### Climb Codes Unique Within 5km
 
 ![5km rule](5km-rule.png)
-  
 
 Climb Codes should be unique within 3 miles (5km).
 This sufficiently precise for casual conversation or use within a guidebook.
@@ -252,13 +251,11 @@ and geospatial identification.
 
 ### Big Random(ish) Values
 
-- [UUIDs](https://datatracker.ietf.org/doc/html/rfc4122)
+- [UUID](https://datatracker.ietf.org/doc/html/rfc4122)
 - [ULID](https://github.com/ulid/spec)
 - [ObjectId](https://www.mongodb.com/docs/manual/reference/method/ObjectId/) from MongoDB
 - Youtube ID
   ([nice overview on capacity](https://www.youtube.com/watch?v=gocwRvLhDf8))
-- []()
-- []()
   
 <!-- https://sudhir.io/uuids-ulids -->
 
