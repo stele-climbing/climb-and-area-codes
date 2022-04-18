@@ -25,7 +25,7 @@ These codes should meet a few goals:
 4. Allow the community to come to a consensus
    when codes differ
   
-### Destination Codes
+### Destination Codes Unique Within 300km
   
 ![300km rule](300km-rule.png)
 
@@ -82,7 +82,6 @@ When prefixed with a 3-character geohash it will be globally unique.
   </tbody>
 </table>
 
-
 The term <em>destination</em> here is used for the idea of
 a geospatial boundary that organizes climbs.
 Destinations do not intersect or nest.
@@ -109,16 +108,52 @@ is too vague to be practical for our purposes.
   </p>
 </details>
 
-### Climb Codes
+### Climb Codes Unique Within 5km
 
 ![5km rule](5km-rule.png)
   
-Climb Codes should be unique within either 3 miles (5km)
-_or_ the destination that the climb is in,
-whichever contains more climbs.
+
+Climb Codes should be unique within either 3 miles (5km).
 This sufficiently precise for casual conversation or use within a guidebook.
 Also, when prefixed with a 6-character geohash, it will be globally unique.
 
+<table>
+  <thead>
+    <tr>
+      <th>Climb</th>
+      <th>Code</th>
+      <th>Near/In</th>
+      <th>Plain Text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Plumber&apos;s Crack</td>
+      <td>PLC</td>
+      <td><a href="https://geohash.softeng.co/9qmvtw">9qmvtw</a></td>
+      <td>9qmvtw:PLC</td>
+    </tr>
+    <tr>
+      <td>Midnight Lightning</td>
+      <td>MNL</td>
+      <td><a href="https://geohash.softeng.co/9qdywq">9qdywq</a></td>
+      <td>9qdywq:MNL</td>
+    </tr>
+    <tr>
+      <td>The Nose</td>
+      <td>NOS</td>
+      <td><a href="https://geohash.softeng.co/9qdyts">9qdyts</a></td>
+      <td>9qdyts:NOS</td>
+    </tr>
+  </tbody>
+</table>
+
+### Climb Codes Unique Within Destination
+
+![Unique within destination](destination-rule.png)
+
+Climb Codes must also be unique within their destination.
+ 
 Optionally, for improved human friendliness,
 the parent destination&apos;s code can be used.
 
@@ -127,46 +162,34 @@ the parent destination&apos;s code can be used.
     <tr>
       <th>Climb</th>
       <th>Code</th>
-      <th colspan=2>Near/In</th>
+      <th>Within</th>
       <th>Plain Text</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td rowspan=2>Plumber&apos;s Crack</td>
-      <td rowspan=2>PLC</td>
-      <td colspan=2><a href="https://geohash.softeng.co/9qmvtw">9qmvtw</a></td>
-      <td class="codes-table__code">9qmvtw:PLC</td>
-    </tr>
-    <tr>
+      <td>Plumber&apos;s Crack</td>
       <td><a href="https://geohash.softeng.co/9qm">9qm</a></td>
       <td>RED</td>
-      <td class="codes-table__code">9qm:RED:PLC</td>
+      <td>9qm:RED:PLC</td>
     </tr>
     <tr>
-      <td rowspan=2>Midnight Lightning</td>
-      <td rowspan=2>MNL</td>
-      <td colspan=2><a href="https://geohash.softeng.co/9qdywq">9qdywq</a></td>
-      <td class="codes-table__code">9qdywq:MNL</td>
-    </tr>
-    <tr>
+      <td>Midnight Lightning</td>
       <td><a href="https://geohash.softeng.co/9qd">9qd</a></td>
       <td>YOV</td>
       <td class="codes-table__code">9qd:YOV:MNL</td>
     </tr>
     <tr>
-      <td rowspan=2>The Nose</td>
-      <td rowspan=2>NOS</td>
-      <td colspan=2><a href="https://geohash.softeng.co/9qdyts">9qdyts</a></td>
-      <td class="codes-table__code">9qdyts:NOS</td>
-    </tr>
-    <tr>
+      <td>The Nose</td>
       <td><a href="https://geohash.softeng.co/9qd">9qd</a></td>
       <td>YOV</td>
       <td class="codes-table__code">9qd:YOV:NOS</td>
     </tr>
   </tbody>
 </table>
+
+This allows users and authors be concise and brief when there's a common context,
+like a guidebook.
 
 Also, see
 [interactive examples](https://stele-climbing.gitlab.io/climb-and-area-codes/examples/).
