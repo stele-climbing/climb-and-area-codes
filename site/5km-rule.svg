@@ -7,15 +7,29 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="431.44031mm"
-   height="226.67154mm"
-   viewBox="0 0 431.44031 226.67154"
+   width="1000mm"
+   height="250mm"
+   viewBox="0 0 1000 250"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
    sodipodi:docname="5km-rule.svg">
   <defs
      id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker1439"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1437" />
+    </marker>
     <marker
        style="overflow:visible"
        id="Arrow1Mend"
@@ -44,17 +58,46 @@
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path866" />
     </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-8"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path872-9" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path866-3" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#fcfcfc"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.27984974"
-     inkscape:cx="732.66968"
-     inkscape:cy="375.76085"
+     inkscape:zoom="0.055283473"
+     inkscape:cx="2639.9059"
+     inkscape:cy="-31.013045"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -66,7 +109,7 @@
      inkscape:window-width="1366"
      inkscape:window-height="704"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="27"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -84,97 +127,104 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(130.77013,-23.747805)">
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:2.89872;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect1450"
-       width="428.5416"
-       height="223.77281"
-       x="-129.32077"
-       y="25.197165" />
+     transform="translate(130.77013,-23.747803)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:47.3733px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.18434;"
-       x="-102.86353"
-       y="73.194252"
-       id="text847"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:51.9198px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:1.298"
+       x="490.7536"
+       y="113.50334"
+       id="text847-9"><tspan
          sodipodi:role="line"
-         id="tspan845"
-         x="-102.86353"
-         y="73.194252"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:47.3733px;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:1.18434;">NOS</tspan></text>
-    <circle
-       style="fill:#ffffff;stroke:#000000;stroke-width:3.76253;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:3.76253, 11.2876;stroke-dashoffset:0"
-       id="path833"
-       cx="187.11401"
-       cy="143.12192"
-       r="84.304611" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1.965;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="M 187.19518,143.11043 165.64833,76.152277"
-       id="path861"
-       sodipodi:nodetypes="cc" />
-    <circle
-       style="fill:#ffffff;stroke:none;stroke-width:0.735243;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-       id="path1267"
-       cx="187.19516"
-       cy="143.11043"
-       r="12.988007" />
+         id="tspan845-3"
+         x="490.7536"
+         y="113.50334"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:51.9198px;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#008000;stroke-width:1.298">NOS</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.2764px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.681912"
-       x="162.07365"
-       y="151.06149"
-       id="text851"><tspan
+       style="font-style:normal;font-weight:normal;font-size:22.6705px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.566766"
+       x="491.02289"
+       y="152.53462"
+       id="text1378-1"><tspan
          sodipodi:role="line"
-         id="tspan849"
-         x="162.07365"
-         y="151.06149"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.2764px;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.681912">NOS</tspan></text>
-    <rect
-       style="fill:#ffffff;stroke:none;stroke-width:1.965;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect1275"
-       width="67.102982"
-       height="18.336651"
-       x="142.74478"
-       y="98.770401" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:15.2666px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.381666"
-       x="163.80659"
-       y="113.63017"
-       id="text855"><tspan
+         x="491.02289"
+         y="152.53462"
+         style="stroke-width:0.566766"
+         id="tspan1380">This code can only be</tspan><tspan
          sodipodi:role="line"
-         id="tspan853"
-         x="163.80659"
-         y="113.63017"
-         style="stroke-width:0.381666">5km</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:11.9101px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.297754"
-       x="158.15598"
-       y="165.29416"
-       id="text1303"><tspan
+         x="491.02289"
+         y="180.87274"
+         style="stroke-width:0.566766"
+         id="tspan1384">reused at least 5km</tspan><tspan
          sodipodi:role="line"
-         id="tspan1301"
-         x="158.15598"
-         y="165.29416"
-         style="stroke-width:0.297754">The Nose</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:12.9808px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;inline-size:166.55;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.324522"
-       x="-114.25098"
-       y="102.51734"
-       id="text1378"
-       transform="matrix(1.4455104,0,0,1.4657301,61.804702,-53.000448)"><tspan
-         x="-114.25098"
-         y="102.51734"><tspan
-           style="stroke-width:0.324522">This code can only be </tspan></tspan><tspan
-         x="-114.25098"
-         y="118.74334"><tspan
-           style="stroke-width:0.324522">reused at least 5km </tspan></tspan><tspan
-         x="-114.25098"
-         y="134.96934"><tspan
-           style="stroke-width:0.324522">away from The Nose</tspan></tspan></text>
+         x="491.02289"
+         y="209.21088"
+         style="stroke-width:0.566766"
+         id="tspan1388">away from The Nose</tspan><tspan
+         sodipodi:role="line"
+         x="491.02289"
+         y="237.549"
+         style="stroke-width:0.566766"
+         id="tspan1386" /></text>
+    <g
+       id="g1582"
+       transform="translate(95.226425,-84.553112)">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:8.709;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:8.709, 26.127;stroke-dashoffset:0"
+         id="path833-1"
+         cx="162.20995"
+         cy="234.4296"
+         r="94.55191" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2.16634;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend-8)"
+         d="M 162.30115,234.4169 137.82852,153.82538"
+         id="path861-9"
+         sodipodi:nodetypes="cc" />
+      <circle
+         style="fill:#ffffff;stroke:none;stroke-width:0.992203;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+         id="path1267-4"
+         cx="162.30113"
+         cy="234.4169"
+         r="17.527187" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:30.0713px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.751784"
+         x="134.60555"
+         y="243.18268"
+         id="text851-7"><tspan
+           sodipodi:role="line"
+           id="tspan849-8"
+           x="134.60555"
+           y="243.18268"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:30.0713px;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.751784">NOS</tspan></text>
+      <rect
+         style="fill:#ffffff;stroke:none;stroke-width:2.16634;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect1275-4"
+         width="73.978722"
+         height="20.215525"
+         x="111.91261"
+         y="182.12827" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:16.8309px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.420774"
+         x="131.60333"
+         y="198.51062"
+         id="text1299"><tspan
+           sodipodi:role="line"
+           id="tspan1297"
+           x="131.60333"
+           y="198.51062"
+           style="stroke-width:0.420774">5km</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:13.1305px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.328263"
+         x="131.41666"
+         y="258.87372"
+         id="text1303-3"><tspan
+           sodipodi:role="line"
+           id="tspan1301-6"
+           x="131.41666"
+           y="258.87372"
+           style="stroke-width:0.328263">The Nose</tspan></text>
+    </g>
   </g>
 </svg>
