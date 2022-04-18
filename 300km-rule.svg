@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="903.58386mm"
+   height="251.10257mm"
+   viewBox="0 0 903.58386 251.10257"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="300km-rule.svg">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path872" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path866" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.11492331"
+     inkscape:cx="1428.2303"
+     inkscape:cy="475.15408"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-midpoints="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(602.91363,0.68321896)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32.5459px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:0.813651"
+       x="-34.894341"
+       y="100.23631"
+       id="text847"><tspan
+         sodipodi:role="line"
+         id="tspan845"
+         x="-34.894341"
+         y="100.23631"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32.5459px;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#008000;stroke-width:0.813651">YOV</tspan></text>
+    <g
+       id="g925"
+       transform="translate(-95.39821,-32.947372)">
+      <circle
+         style="fill:none;stroke:#000000;stroke-width:6.43609;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:6.43609, 19.3083;stroke-dashoffset:0"
+         id="path833"
+         cx="-200.50821"
+         cy="212.37129"
+         r="144.20943" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1.965;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+         d="M -200.36938,212.35165 -247.50913,85.025491"
+         id="path861"
+         sodipodi:nodetypes="cc" />
+      <circle
+         style="fill:#ffffff;stroke:none;stroke-width:0.735243;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+         id="path1267"
+         cx="-200.36938"
+         cy="212.35164"
+         r="12.988007" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.2764px;line-height:1.25;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.681912"
+         x="-225.49089"
+         y="220.3027"
+         id="text851"><tspan
+           sodipodi:role="line"
+           id="tspan849"
+           x="-225.49089"
+           y="220.3027"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.2764px;font-family:FreeMono;-inkscape-font-specification:'FreeMono, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.681912">YOV</tspan></text>
+      <g
+         id="g1310"
+         transform="translate(-414.1793,28.721395)">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:1.965;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+           id="rect1275"
+           width="67.102982"
+           height="18.336651"
+           x="156.47701"
+           y="109.15366" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:15.2666px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.381666"
+           x="160.99527"
+           y="124.01342"
+           id="text855"><tspan
+             sodipodi:role="line"
+             id="tspan853"
+             x="160.99527"
+             y="124.01342"
+             style="stroke-width:0.381666">300km</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:15.2666px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.381666"
+           x="160.99527"
+           y="124.01342"
+           id="text1299"><tspan
+             sodipodi:role="line"
+             id="tspan1297"
+             x="160.99527"
+             y="124.01342"
+             style="stroke-width:0.381666">300km</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11.9101px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.297754"
+         x="-246.54143"
+         y="234.53537"
+         id="text1303"><tspan
+           sodipodi:role="line"
+           id="tspan1301"
+           x="-246.54143"
+           y="234.53537"
+           style="stroke-width:0.297754">Yosemite Valley</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:14.211px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.355277"
+       x="-34.725574"
+       y="124.70304"
+       id="text1378"><tspan
+         sodipodi:role="line"
+         x="-34.725574"
+         y="124.70304"
+         style="stroke-width:0.355277"
+         id="tspan1380">This code can only be used</tspan><tspan
+         sodipodi:role="line"
+         x="-34.725574"
+         y="142.4668"
+         style="stroke-width:0.355277"
+         id="tspan1384">300km away from</tspan><tspan
+         sodipodi:role="line"
+         x="-34.725574"
+         y="160.23055"
+         style="stroke-width:0.355277"
+         id="tspan1388">Yosemite Valley</tspan><tspan
+         sodipodi:role="line"
+         x="-34.725574"
+         y="177.99429"
+         style="stroke-width:0.355277"
+         id="tspan1386" /></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:4.40868;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect1450"
+       width="899.17517"
+       height="246.69389"
+       x="-600.70929"
+       y="1.521121" />
+  </g>
+</svg>
