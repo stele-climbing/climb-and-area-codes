@@ -347,33 +347,32 @@ or numbering them with RK1, RK2, RK3.
 
 #### What about (auto)generated codes?
 
-Generating codes for suggestion to a human editor could be useful,
-though that algorithm would need to be quite good.
-For a climber, picking and typing a few letters is about as difficult as evaluating and confirming a computer-generated code.
-If the generated code is poor, the manual process will be necessary anyway.
-Also, the codes are meant to be human-friendly, which is is hard to quantify (though, hard to fail entirely):
-a human-chosen code would probably be more friendly that a computer generated code.
+Autogenerating codes for a platform is infeasible.
+It would be unlikely to execute on the goals of a climb-id system and,
+if implemented,
+would likely damage public opinion of this and future climb-id systems.
 
-Autopopulating codes for a database is infeasible.
-It would be unlikely to advance the goals of Coca Codes,
-and if implemented, would probably damage the public opinion of this or future climb-id systems.
+For platforms to auto-generate codes that concur with one another, may things would need to be true:
 
-The "Co" in Coca comes from COnsensus.
-For the various platforms to auto-generate codes that concur with one another, may things would need to be true:
+- All platforms would need to use the same algorithm to generate codes.
+- Code choice depends on the subjects name and alternatives in the geographic region.
+  - Platforms would need decent coordinates for all of their climbs and destinations
+  - Platforms would probably need to use the same spelling for names of climbs that are shared
+- Platforms would need knowledge of the climbs that they're lacking.
+  1. An imaginary crag, _The Birds_, has four climbs _Look Up_, _Crows Fly_, _Crowds Flee_, and _Directed by Hitchcock_
+  1. The local community uses PlatformA and has all four climbs well documented.
+  1. A visiting climber gets on _Look Up_ and _Crowds Flee_.
+  1. The visitor uses PlatformB to log their ticks, so they uploaded those two climbs.
+  1. The "Common Algorithm" uses the first three letters of the name when there are no conflicts.
+  1. PlatformA autogenerates the climbs as `LOO`, `CRO`, `CRF`, and `DBH`
+  1. PlatformB must know about both _Crows Fly_ and _Crowds Flee_ or it would assign `LOO`, _none_, `CRO`, and _none_.
 
-1. All platforms must have decent gps coordinates for destinations and climbs.
-2. All platforms must use an identical algorithm.
-3. When platforms share a climb or destination, they must be named identically.
-4. Platforms must have knowledge of the climbs that they're lacking.
-   - an imaginary crag, "The Birds", has four climbs "Look Up", "Crows Fly", "Crowds Flee", and "Directed by Hitchcock"
-   - The local community uses PlatformB and it has all four climbs well-documented.
-   - A visiting climber who uses PlatformF enjoyed "Look Up" and "Crowds Flee".
-   - They wanted to log their ticks, so they uploaded the two climbs.
-   - "The Universal Algorithm" uses the first three letters as when there are no conflicts.
-   - PlatformB, autopopulates the climbs as `LOO`, `CRO`, `CRF`, and `DBH`
-   - Climbing PlatformF, must know about both "Crows Fly" and "Crowds Flee" or it would assign `LOO`, _none_, `CRO`, and _none_.
+If the requirements of reliable autogeneration were met, a climb-id scheme would pointless.
 
-If the requirements of autopopulation were met, a climb-id scheme would pointless.
+An alternative would be generating codes for suggestion to a human editor.
+This could be useful, though the algorithm would need to be quite good;
+Picking and typing a few letters is already a small task,
+and whenever a generated code is poor the manual process will still be necessary.
 
 #### What is a valid code?
 
