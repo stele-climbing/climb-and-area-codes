@@ -1,12 +1,11 @@
 # Consensus Climb & Area Codes
 
 - Climbing is growing quickly and guides are fragmenting.
-  ation scheme would help climbers
-  use multiple guides/platforms and it would encourage platform discovery.
-- The id scheme should be accurate enough to be helpful,
-  but not so precise that it becomes cumbersome.
+- A climb identification scheme would help maintain cohesion.
+- Climbers would be able to better-use use multiple guides/platforms
+- Younger platforms would see improved discoverability.
 - For brevity, this refers to
-  _<strong>Co</strong>nsensus <strong>C</strong>limb and <strong>A</strong>rea Codes_
+  <em><strong>Co</strong>nsensus <strong>C</strong>limb and <strong>A</strong>rea Codes</em>
   as
   _Coca Codes_.
 - The name _Coca Code_ isn't final and this document is a draft.
