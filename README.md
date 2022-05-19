@@ -20,8 +20,8 @@ There are three major guidelines:
 1. A code should be concise.
 2. A code should resemble the name.
 3. A code must be unique within its context
-  - within a geographic radius, a code must be unique
-  - within a destination, climbs codes should be unique
+   - within a geographic radius, a code must be unique
+   - within a destination, climbs codes should be unique
 
 These guidelines help meet a few broader goals:
 
