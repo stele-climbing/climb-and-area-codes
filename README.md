@@ -347,17 +347,12 @@ or numbering them with RK1, RK2, RK3.
 
 #### What about (auto)generated codes?
 
-Autogenerating codes for a platform is infeasible.
-It would be unlikely to execute on the goals of a climb-id system and,
-if implemented,
-would likely damage public opinion of this and future climb-id systems.
+For platforms to autogenerate codes that concur with one another, may things would need to be true:
 
-For platforms to auto-generate codes that concur with one another, may things would need to be true:
-
-- All platforms would need to use the same algorithm to generate codes.
-- Code choice depends on the subjects name and alternatives in the geographic region.
+- All platforms would need to use the same algorithm for generating codes.
+- Because code choice depends on the subjects name and alternatives in the geographic region.
   - Platforms would need decent coordinates for all of their climbs and destinations
-  - Platforms would probably need to use the same spelling for names of climbs that are shared
+  - Platforms would probably identical or near-identical spelling for names of climbs that are shared
 - Platforms would need knowledge of the climbs that they're lacking.
   1. An imaginary crag, _The Birds_, has four climbs _Look Up_, _Crows Fly_, _Crowds Flee_, and _Directed by Hitchcock_
   1. The local community uses PlatformA and has all four climbs well documented.
@@ -367,10 +362,10 @@ For platforms to auto-generate codes that concur with one another, may things wo
   1. PlatformA autogenerates the climbs as `LOO`, `CRO`, `CRF`, and `DBH`
   1. PlatformB must know about both _Crows Fly_ and _Crowds Flee_ or it would assign `LOO`, _none_, `CRO`, and _none_.
 
-If the requirements of reliable autogeneration were met, a climb-id scheme would pointless.
+If those requirements of reliable autogeneration could be met, a climb-id scheme would be unnecessary.
 
 An alternative would be generating codes for suggestion to a human editor.
-This could be useful, though the algorithm would need to be quite good;
+This might be nice, though the algorithm would need to be quite good;
 Picking and typing a few letters is already a small task,
 and whenever a generated code is poor the manual process will still be necessary.
 
