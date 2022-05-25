@@ -350,9 +350,9 @@ or numbering them with RK1, RK2, RK3.
 For platforms to autogenerate codes that concur with one another, may things would need to be true:
 
 - All platforms would need to use the same algorithm for generating codes.
-- Because code choice depends on the subjects name and alternatives in the geographic region.
+- Because code choice depends on the subjects name and the geographic region (to check alternatives).
+  - Platforms would need identical or near-identical spelling for names off climbs that are shared
   - Platforms would need decent coordinates for all of their climbs and destinations
-  - Platforms would probably identical or near-identical spelling for names of climbs that are shared
 - Platforms would need knowledge of the climbs that they're lacking.
   1. An imaginary crag, _The Birds_, has four climbs _Look Up_, _Crows Fly_, _Crowds Flee_, and _Directed by Hitchcock_
   1. The local community uses PlatformA and has all four climbs well documented.
@@ -362,9 +362,9 @@ For platforms to autogenerate codes that concur with one another, may things wou
   1. PlatformA autogenerates the climbs as `LOO`, `CRO`, `CRF`, and `DBH`
   1. PlatformB must know about both _Crows Fly_ and _Crowds Flee_ or it would assign `LOO`, _none_, `CRO`, and _none_.
 
-If those requirements of reliable autogeneration could be met, a climb-id scheme would be unnecessary.
+If those requirements for autogeneration could be met, a climb-id scheme would be unnecessary.
 
-An alternative would be generating codes for suggestion to a human editor.
+Generated codes could be suggested to a human editor.
 This might be nice, though the algorithm would need to be quite good;
 Picking and typing a few letters is already a small task,
 and whenever a generated code is poor the manual process will still be necessary.
